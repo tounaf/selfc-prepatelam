@@ -1,0 +1,125 @@
+{#<div class="col-md-6">#}
+    {#<div class="ibox-content">#}
+        {#{% trans_default_domain 'FOSUserBundle' %}#}
+        {#{% if error %}#}
+            {#<div style="color:red;">{{ 'label' |trans }}</div>#}
+        {#{% endif %}#}
+        {#<form action="{{ path("fos_user_security_check") }}" method="post" class="m-t" role="form">#}
+            {#<p class="login-box-msg">Authentification</p>#}
+            {#{% if csrf_token %}#}
+                {#<input type="hidden" class="form-control" name="_csrf_token" value="{{ csrf_token }}"/>#}
+            {#{% endif %}#}
+            {#<div class="form-group">#}
+                {#<input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Email" required=""/>#}
+            {#</div>#}
+            {#<div class="form-group">#}
+                {#<input type="password" id="password" name="_password" class="form-control" placeholder="Mot de passe" required=""/>#}
+            {#</div>#}
+            {#<input type="checkbox" id="remember_me" name="_remember_me" value="off"/>#}
+            {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+            {#<input type="submit" id="_submit" name="_submit" class="btn btn-primary block full-width m-b" value="Connexion"/>#}
+            {#<a href="#">#}
+                {#<small>Mot de passe oublié?</small>#}
+            {#</a>#}
+        {#</form>#}
+        {#<p class="m-t">#}
+            {#<small></small>#}
+        {#</p>#}
+    {#</div>#}
+{#</div>#}
+
+{% extends '::base.html.twig' %}
+{#{% form_theme form 'GregwarCaptchaBundle:Form:captcha.html.twig' %}#}
+{% block class_header_background %}content_header rechargeC{% endblock %}
+{% block content -%}
+
+    <div class="abs">
+        <div class="wrap-bg">
+            {% trans_default_domain 'FOSUserBundle' %}
+            {% if error %}
+                <div style="color:red;">{{ 'erreur.login' |trans }}</div>
+            {% endif %}
+            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Authentification</div></div>
+            <div class="acont_bg">
+                <form method="POST" name="rechargeForm" id="rechargeForm" action="{{ url('fos_user_security_check') }}">
+                    {% if csrf_token %}
+                        <input type="hidden" class="form-control" name="_csrf_token" value="{{ csrf_token }}"/>
+                    {% endif %}
+                    <div class="clearfix">
+                            <label class="text11noirnormal flot pad_cont_a_div1">Login *</label>
+                            <p class="transparency_bouton flot"><input type="email" value=""  class="text11vertnormal" required="required" name="_username" id="username">
+
+                            </p>
+                        </div>
+                        <div class="clearfix">
+                            <label class="text11noirnormal flot pad_cont_a_div1">Mot de passe *</label>
+                            <div class="flot rposition clearfix">
+                                <p class="transparency_bouton flot"><input type="password" class="text11vertnormal" required="required" name="_password" id="password" value="">
+                                </p>
+                                <p class="btnHelp"><a href="#pop-error1" id="popin"  class="error1" href="{{ asset('bundles/telmaselfcareprepaid/images/poppin_recharge.jpg') }}"><img src="{{ asset('bundles/telmaselfcareprepaid/images/rechargenligne_petit_interrogation.png') }}" width="26" height="24" border="0" /></a></p>
+                                <p><a href="#pop-error" id="link_error" class="error"></a></p>
+                            </div>
+                        </div>
+                    <div class="afooter_bg">
+                        <div class="boutoun_valide"><button type="submit" id="_submit" name="_submit"><img  src="{{ asset('bundles/telmaselfcareprepaid/images/rechargenligne_bouton_valide.jpg')}}" border="0" width="82" height="25"></button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="text11noirnormal flot">
+        <div class=" pad_content_bas_divglobal">
+            <span class="text12noirbold">Rechargez votre compte TELMA :</span><br />
+            <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
+            <p>Munissez-vous d'une carte de recharge TELMA et indiquez dans l'espace &laquo; Rechargez Votre Compte TELMA &raquo;   : </p>
+            <div class="pad_div_list">- Le num&eacute;ro de t&eacute;l&eacute;phone que vous souhaitez recharger <br />
+                <span class="add">-  Les 14 chiffres de votre code de recharge</span><br />
+                - Le code visuel
+            </div>
+            <p>Cliquez sur &laquo; VALIDEZ &raquo; pour confirmer le rechargement</p></div></div>
+    <div class="clear"></div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $("#submit_recharge").click(function(){
+            var pattern = /^\d+$/;
+            $('#pop-error').empty();
+            var submit = true;
+            if (! pattern.test($("#recharge_numero").val()) || ($("#recharge_numero").val()).length < 10
+                || ($("#recharge_numero").val().substr(0, 3) !== "034" && $("#recharge_numero").val().substr(0, 3) !== "020")  ){
+                $('#pop-error').append("<ul><li>Numéro erroné. Veuillez ressaisir votre numéro Telma.</li></ul>");
+                submit = false;
+            }
+            if (! pattern.test($("#recharge_codeRecharge").val()) || ($("#recharge_codeRecharge").val()).length < 14 ){
+                $('#pop-error').append("<ul><li>Code de recharge erroné. Veuillez vérifier votre code...</li></ul>");
+                submit = false;
+            }
+            if( $('#recharge_captcha').val().length < 4 ){
+                $('#pop-error').append("<ul><li>Code visuel incorrect! Veuillez le ressaisir svp....</li></ul>");
+                submit = false;
+            }
+            if (submit){
+                $('#rechargeForm').submit();
+            }else{
+                $("#link_error").trigger('click');
+            }
+        });
+
+        $(document).ready(function(){
+            $('.error').attr('tabindex', '-1');
+            if($('#display_error').val())
+                $("#link_error").trigger('click');
+            {% if message is defined %}
+            $('#pop-error').empty();
+            $('#pop-error').append("<ul><li>{{ message }}</li></ul>");
+            $("#link_error").trigger('click');
+            {% endif %}
+        });
+        function validateForm(){
+            $("#submit_recharge").trigger('click');
+        }
+    </script>
+{% endblock %}

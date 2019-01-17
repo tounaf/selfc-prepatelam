@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/login_two_columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Oct 2017 15:26:54 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Authentification</title>
+    <link href="{{ asset('Template/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Template/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('Template/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('Template/css/style.css') }}" rel="stylesheet">
+</head>
+    <body class="gray-bg">
+        {#<div>#}
+            {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+                {#{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |#}
+                {#<a href="{{ path('fos_user_security_logout') }}">#}
+                    {#{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}#}
+                {#</a>#}
+            {#{% else %}#}
+                {#<a href="{{ path('fos_user_security_login') }}">{{ ''|trans({}, 'FOSUserBundle') }}</a>#}
+            {#{% endif %}#}
+        {#</div>#}
+
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        <div class="loginColumns animated fadeInDown">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="font-bold">{{ "application_name" }}</h2>
+                    <p></p>
+                    <div>
+                        <img style="width: 100%;" src="{{ asset('images/logo-bo.png') }}" alt="Logo">
+                    </div>
+                </div>
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6 text-right">
+                <small></small>
+            </div>
+        </div>
+    </body>
+</html>

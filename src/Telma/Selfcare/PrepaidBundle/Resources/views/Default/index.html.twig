@@ -1,0 +1,62 @@
+
+{% extends '::base.html.twig' %}
+{#{% form_theme form 'GregwarCaptchaBundle:Form:captcha.html.twig' %}#}
+{% block class_header_background %}content_header rechargeC{% endblock %}
+{% block content -%}
+
+
+    <div class="text11noirnormal flot">
+        <div class=" pad_content_bas_divglobal">
+            <span class="text12noirbold">Rechargez votre compte TELMA : {{ app.user.email }}</span><br />
+            <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
+            <p>Munissez-vous d'une carte de recharge TELMA et indiquez dans l'espace &laquo; Rechargez Votre Compte TELMA &raquo;   : </p>
+            <div class="pad_div_list">- Le num&eacute;ro de t&eacute;l&eacute;phone que vous souhaitez recharger <br />
+                <span class="add">-  Les 14 chiffres de votre code de recharge</span><br />
+                - Le code visuel
+            </div>
+            <p>Cliquez sur &laquo; VALIDEZ &raquo; pour confirmer le rechargement</p></div></div>
+    <div class="clear"></div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $("#submit_recharge").click(function(){
+            var pattern = /^\d+$/;
+            $('#pop-error').empty();
+            var submit = true;
+            if (! pattern.test($("#recharge_numero").val()) || ($("#recharge_numero").val()).length < 10
+                || ($("#recharge_numero").val().substr(0, 3) !== "034" && $("#recharge_numero").val().substr(0, 3) !== "020")  ){
+                $('#pop-error').append("<ul><li>Numéro erroné. Veuillez ressaisir votre numéro Telma.</li></ul>");
+                submit = false;
+            }
+            if (! pattern.test($("#recharge_codeRecharge").val()) || ($("#recharge_codeRecharge").val()).length < 14 ){
+                $('#pop-error').append("<ul><li>Code de recharge erroné. Veuillez vérifier votre code...</li></ul>");
+                submit = false;
+            }
+            if( $('#recharge_captcha').val().length < 4 ){
+                $('#pop-error').append("<ul><li>Code visuel incorrect! Veuillez le ressaisir svp....</li></ul>");
+                submit = false;
+            }
+            if (submit){
+                $('#rechargeForm').submit();
+            }else{
+                $("#link_error").trigger('click');
+            }
+        });
+
+        $(document).ready(function(){
+            $('.error').attr('tabindex', '-1');
+            if($('#display_error').val())
+                $("#link_error").trigger('click');
+            {% if message is defined %}
+            $('#pop-error').empty();
+            $('#pop-error').append("<ul><li>{{ message }}</li></ul>");
+            $("#link_error").trigger('click');
+            {% endif %}
+        });
+        function validateForm(){
+            $("#submit_recharge").trigger('click');
+        }
+    </script>
+{% endblock %}

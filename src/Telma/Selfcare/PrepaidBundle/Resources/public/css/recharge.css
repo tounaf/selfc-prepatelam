@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+body{ width:975px; margin:0 auto 0 auto; background-color:#ffdd00;}
+.clear{ clear:both; font-size:1px;}
+.hidden{ display:none;}
+a img{ border:none;}
+input{ border:none; background-color:transparent; width:165px;}
+form{ margin:0;}
+
+.abs{ position:absolute; margin-left:530px; margin-top:108px;}
+
+.boutoun_valide{ position:absolute; margin-left:275px; margin-top:5px;}
+.text12noirnormal{ font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.text11noirnormal{ font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+.text9noirGris{ font-family:Arial, Helvetica, sans-serif; font-size:9px; color: #666;}
+.text11vertnormal{ font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#006633; f}
+.text11noirbold{ font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold;}
+.text12noirbold{ font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#000;}
+a:hover.text12noirbold{ font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#000;}
+.text14noirbold{ font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold;}
+.text16noirbold{ font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;}
+.text10noirnormal{ font-family:Arial, Helvetica, sans-serif; font-size:10px; text-align:justify;}
+
+.text_italic{ padding:0px 0 6px 10px; font-family:Arial, Helvetica, sans-serif; font-size:9px;}
+.flot{ float:left;}
+.transparency_bouton1{ width:181px; background-image: url(../images/input-recharge.gif); background-repeat:no-repeat; height:21px; margin:0 0 3px 0; line-height:17px;}
+.transparency_bouton2{ width:181px; background-image: url(../images/input-recharge.gif); background-repeat:no-repeat; height:21px; margin:0 5px 0 0;}
+.transparency_bouton3 {
+    background-color: transparent;
+    margin: 2px 0;
+    width: 181px;
+}
+.transparency_bouton4{ width:181px; background-image: url(../images/input-recharge.gif); background-repeat:no-repeat; height:21px; margin:0 0 3px 0;}
+
+.for_header{ width:975px; margin:0 auto 0 auto}
+.aheader_bg{/* background-image: url(../images/rechargenligne_aheader.jpg);*/ background-repeat:no-repeat; width:403px; height:42px;}
+.pad_cont_aheader{ padding:15px 0 0 15px;} 
+.acont_bg{ background-image:url(../images/rechargenligne_acont.jpg); background-repeat:no-repeat; background-position:top; width:403px; padding-top:6px;}
+.pad_cont_a_div1{ width:110px; padding-left:25px;}
+.afooter_bg{ background-image: url(../images/rechargenligne_afooter.jpg); background-repeat:no-repeat; width:403px; height:39px;}
+.text_plus_haut{ position:absolute; margin-left:55px; margin-top:86px;}
+.container_bas{ width:975px; background-color:#fff;}
+.pad_content_bas_divglobal {
+    padding: 30px 10px 10px 30px;
+    position: relative;
+    z-index: 10;
+}
+.pad_content_bas_divglobal_confirmation {
+    padding: 30px 10px 10px 50px;
+    position: relative;
+    z-index: 10;
+}
+.pad_div_list{ padding:0 0 5px 20px;}
+.offre_actuelle{ width:325px; padding:100px 0 0 0;}
+.bouton_cliquer_ici{ position:absolute; margin-left:173px; margin-top:82px;}
+.text_dessus_bouton_cliquer{ line-height:11px; width:140px; position:absolute; text-align:justify; margin-left:165px; margin-top:58px;}
+.content_header{ width:975px; height:329px;}
+.content_header_confirmation{ width:975px; height:250px;}  
+.abs_confirmation{ position:absolute; margin-left:50px; margin-top:120px;}
+.abs_offre_actuelle{ position:absolute; margin-left:530px; margin-top:120px;}
+.offre_actuelle_confirmation{ width:325px;}
+.confirmation_header{ background-image: url(../images/rechargenligne_confirmation_header.jpg) ; background-repeat:no-repeat; width:365px; height:32px;}
+.echec_header{ /*background-image: url(../images/rechargenligne_echec_header.jpg) ; background-repeat:no-repeat;*/ width:365px; height:32px;}
+.pad_confirmation{ padding:10px 0 0 15px;}
+.confirmation_cont{ /*background-image: url(../images/rechargenligne_confirmation_cont.jpg); background-repeat:no-repeat;*/ width:365px; height:67px; background-position:top;}
+.echec_cont{ /*background-image: url(../images/rechargenligne_echec_cont.jpg); background-repeat:no-repeat;*/ width:365px; height:67px; background-position:top;}
+.pad_confirmation_cont{ padding:10px 0 0 30px;}
+.confirmation_footer{ background-image: url(../images/rechargenligne_confirmation_footer.jpg); background-repeat:no-repeat; width:365px; height:13px;}
+
+#fancybox-wrap {
+  margin-left: 265px;
+}
+
+.add{ line-height:25px;}
+.link_back {
+    margin-left: 77px;
+    margin-top: -14px;
+    position: absolute;
+}
+.link_back a{color:#000;}
+.error{ font-size:11px; font-family:Arial, Helvetica, sans-serif; color:red;}
+.in_error {
+    background-color: #FFFFFF;
+    border: 1px solid red;
+    -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 0 3px #999999;
+  -webkit-box-shadow: 0 0 3px #999999;
+  box-shadow: 0 0 3px #999999;
+    color: red;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    margin: 0 10px 5px;
+    padding: 3px 5px 3px 30px;
+  background-image:url(../images/rechargenligne_echec_icon.jpg);
+  background-repeat:no-repeat;
+  background-position:1px 5px;
+  text-align:justify;
+}

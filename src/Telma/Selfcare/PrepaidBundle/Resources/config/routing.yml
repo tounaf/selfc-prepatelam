@@ -1,0 +1,7 @@
+telma_selfcare_prepaid_homepage:
+    path:     /
+    defaults: { _controller: TelmaSelfcarePrepaidBundle:Default:index }
+
+reset_password:
+    path:     /reset-mot-de-passe
+    defaults: { _controller: TelmaSelfcarePrepaidBundle:User:resetPassword }
