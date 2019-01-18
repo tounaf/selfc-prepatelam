@@ -39,7 +39,7 @@
             {% if error %}
                 <div style="color:red;">{{ 'erreur.login' |trans }}</div>
             {% endif %}
-            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Authentification</div></div>
+            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Authentification {% if app.user %}{{ app.user.email }}{% endif %}</div></div>
             <div class="acont_bg">
                 <form method="POST" name="rechargeForm" id="rechargeForm" action="{{ url('fos_user_security_check') }}">
                     {% if csrf_token %}
@@ -66,6 +66,8 @@
                 </form>
             </div>
         </div>
+
+        <div class="forget_password"><a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a></div>
     </div>
 
     <div class="text11noirnormal flot">

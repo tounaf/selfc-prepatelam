@@ -2,3 +2,9 @@ services:
 #    telma_selfcare_prepaid.example:
 #        class: Telma\Selfcare\PrepaidBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    telma_selfcare_prepaid.login_listener:
+           class: Telma\Selfcare\PrepaidBundle\EventListener\LoginListener
+           arguments: ['@service_container', '@session', '@request_stack']
+           tags:
+              - { name: kernel.event_listener, event: kernel.exception, method: onKernelRequest }

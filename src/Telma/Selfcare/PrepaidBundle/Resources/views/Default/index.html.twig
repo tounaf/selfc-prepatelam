@@ -7,7 +7,7 @@
 
     <div class="text11noirnormal flot">
         <div class=" pad_content_bas_divglobal">
-            <span class="text12noirbold">Rechargez votre compte TELMA : {{ app.user.email }}</span><br />
+            <span class="text12noirbold">Rechargez votre compte TELMA :{% if app.user %} {{ app.user.email }} {% endif %}</span><br />
             <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
             <p>Munissez-vous d'une carte de recharge TELMA et indiquez dans l'espace &laquo; Rechargez Votre Compte TELMA &raquo;   : </p>
             <div class="pad_div_list">- Le num&eacute;ro de t&eacute;l&eacute;phone que vous souhaitez recharger <br />
