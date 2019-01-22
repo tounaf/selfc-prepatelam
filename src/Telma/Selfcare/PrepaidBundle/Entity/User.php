@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * Users
  *
- * @ORM\Table(name="User")
- * @ORM\Entity(repositoryClass="Telma\Selfcare\PrepaidBundle\Entity\UserRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Telma\Selfcare\PrepaidBundle\Repository\UserRepository")
  */
 class User extends BaseUser
 {
@@ -56,6 +56,7 @@ class User extends BaseUser
      * @ORM\Column(name="is_admin", type="boolean", nullable=true)
      */
     private $isAdmin;
+
 
     /**
      * User constructor.

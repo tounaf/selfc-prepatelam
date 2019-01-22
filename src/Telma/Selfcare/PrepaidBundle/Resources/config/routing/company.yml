@@ -1,0 +1,34 @@
+company:
+    path:     /
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:index" }
+
+company_show:
+    path:     /{id}/show
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:show" }
+
+company_new:
+    path:     /new
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:new" }
+
+company_create:
+    path:     /create
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:create" }
+    methods:  POST
+
+company_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:edit" }
+
+company_update:
+    path:     /{id}/update
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:update" }
+    methods:  [POST, PUT]
+
+company_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:delete" }
+    methods:  [POST, DELETE]
+company_filter:
+    path: /filter-list
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:filter" }
+    methods: POST

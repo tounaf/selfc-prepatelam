@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+
+    <link href="{{ asset('bundles/telmaselfcareprepaid/css/datepicker.min.css') }}" rel="stylesheet" type="text/css" />
+    {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.css" />#}
+    {#<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>#}
+{% endblock %}
+{% block content %}
+    <h1>Company list</h1>
+    {#<form action="{{ path('company_filter') }}" method="post">#}
+        <label for="company_nom">Entreprise
+            <input type="text" id="nomComp" name="nomCompany">
+        </label>
+        <label for="company_nom">Status</label>
+        <select name="statusComp" id="statusComp">
+            <option value="">tous</option>
+            <option value="1">Actif</option>
+            <option value="0">Inactif</option>
+        </select>
+
+        <label for="creation_date">Création du
+            <input class="js-datepicker" type="text" id="debutDateSearch" value="{{ 'now' |date('d/m/Y') }}" name="debutDateSearch">au
+            <input class="js-datepicker" type="text" id="endDateSearch" value="{{ 'now' |date('d/m/Y') }}" name="endDateSearch">
+        </label>
+        <button type="submit" id="search-button">Rechercher</button>
+    {#</form>#}
+    <div id="result"> Rechercher des entreprise </div>
+    {% endblock %}
+
+{% block javascripts %}
+    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>#}
+
+    <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/datepicker.min.js') }}"></script>
+    {#<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>#}
+
+    <script>
+        $(document).ready(function () {
+            $('.js-datepicker').datepicker({ dateFormat: 'Y-m-d'});
+//            $('#result').append(dataComp);
+            var search = $('#search-button');
+            search.click(function () {
+                var nomComp = $('#nomComp').val();
+                var statusComp = $('#statusComp').val();
+                var debutDateSearch = $('#debutDateSearch').val();
+                var endDateSearch = $('#endDateSearch').val();
+                $.ajax({
+                    url: "{{ path('company_filter') }}",
+                    type: 'POST',
+                    dataType: 'html',
+                    data: {
+                        nomComp: nomComp , statusComp: statusComp, debutDateSearch: debutDateSearch, endDateSearch: endDateSearch
+                    },
+                    success: function(data){
+                        $('#result').empty();
+                        $('#result').append(data);
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                });
+
+            });
+        })
+    </script>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% if companies != null %}
+    <table class="data">
+        <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Date de création</th>
+            <th>Modification par</th>
+            <th>Status</th>
+        </tr>
+        <tbody>
+        {% for co in companies %}
+            <tr>
+                <td></td>
+                {% if co.companyName is not null %}
+                    <td>{{ co.companyName }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                <td>{{ co.creationDate |date("Y-M-d") }}</td>
+                {% if co.userUpdate %}
+                    <td>{{ co.userUpdate.nom }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                <td>{{ co.status }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Resultat null</p>
+{% endif %}

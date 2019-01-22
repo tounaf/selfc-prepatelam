@@ -41,4 +41,11 @@ class UserController extends Controller
         return $this->render('TelmaSelfcarePrepaidBundle:User:resetPassword.html.twig', array());
     }
 
+    public function createUserAction(Request $request)
+    {
+        $content = $request->getContent();
+        $newUser = new User();
+
+    }
+
 }

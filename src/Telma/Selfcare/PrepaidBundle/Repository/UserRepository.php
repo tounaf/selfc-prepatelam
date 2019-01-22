@@ -1,6 +1,6 @@
 <?php
 
-namespace Telma\Selfcare\PrepaidBundle\Entity;
+namespace Telma\Selfcare\PrepaidBundle\Repository;
 
 /**
  * UserRepository

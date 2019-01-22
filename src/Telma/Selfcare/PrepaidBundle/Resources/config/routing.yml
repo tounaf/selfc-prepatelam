@@ -1,3 +1,7 @@
+telma_selfcare_prepaid_company:
+    resource: "@TelmaSelfcarePrepaidBundle/Resources/config/routing/company.yml"
+    prefix:   /company
+
 telma_selfcare_prepaid_homepage:
     path:     /
     defaults: { _controller: TelmaSelfcarePrepaidBundle:Default:index }
