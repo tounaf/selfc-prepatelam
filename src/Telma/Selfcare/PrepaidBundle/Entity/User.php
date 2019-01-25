@@ -48,7 +48,7 @@ class User extends BaseUser
      *
      * @ORM\Column(name="is_valid", type="boolean", nullable=true)
      */
-    private $isValid;
+    private $isValid = true;
 
     /**
      * @var boolean

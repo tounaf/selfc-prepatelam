@@ -6,9 +6,12 @@
     <title>{% block title %}Telma: Le premier opérateur convergent à Madagascar{% endblock %}</title>
     {% block stylesheets %}
         <link href="{{ asset('bundles/telmaselfcareprepaid/css/jquery.fancybox.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/telmaselfcareprepaid/css/datepicker.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/telmaselfcareprepaid/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/telmaselfcareprepaid/font/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bundles/telmaselfcareprepaid/css/recharge.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bundles/telmaselfcareprepaid/css/styles.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('bundles/telmaselfcareprepaid/css/datepicker.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/telmaselfcareprepaid/css/company.css') }}" rel="stylesheet" type="text/css" />
         {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
         <style>
             #pop-error li {
@@ -40,7 +43,9 @@
         </div>
     </header>
     <div class="{% block class_header_background %}{% endblock %}">
-        <div class="text12noirnormal text_plus_haut">Rechargez en ligne votre compte Telma ou celui de l'un de vos proches 7j/7, 24h/24 chez vous ou au bureau en toute s&eacute;curit&eacute;..</div>
+        <div class="{% block nav_right_header %}{% endblock %}"></div>
+
+        {#<div class="text12noirnormal text_plus_haut">Rechargez en ligne votre compte Telma ou celui de l'un de vos proches 7j/7, 24h/24 chez vous ou au bureau en toute s&eacute;curit&eacute;..</div>#}
         {% endblock %}
 
         {% block content %}
@@ -67,11 +72,12 @@
     {#{% endblock %}#}
     {% block javascripts %}
 
+        <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/jquery.fancybox.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/common.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/jquery-1.7.2.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/datepicker.js') }}"></script>
-
+        {#<script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/jquery-1.7.2.min.js') }}"></script>#}
+        <script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/bootstrap.js') }}"></script>
+        {#<script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/bootstrap-datepicker.js') }}"></script>#}
     {% endblock %}
 </body>
 </html>

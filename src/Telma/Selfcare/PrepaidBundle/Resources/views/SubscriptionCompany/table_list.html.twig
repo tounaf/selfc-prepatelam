@@ -1,0 +1,29 @@
+<div class="row">
+    <div class=" col-md-8 col-md-offset-2">
+        <table class="table table-striped records_list block_table_result">
+            <thead class=" head_table">
+            <tr>
+                <th></th>
+                <th>Numéro</th>
+                <th>Entreprise</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if entities | length > 0 %}
+                {% for entity in entities %}
+                    <tr class="row_data_table">
+                        <td><a href="{{ path('subscriptioncompany_delete', { 'id': entity.id }) }}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td>{{ entity.subscription }}</td>
+                        <td>{% if entity.company %}{{ entity.company.companyName }}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <td colspan="3" class="text-center">Aucun resultat </td>
+            {% endif %}
+            </tbody>
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(entities) }}
+        </div>
+    </div>
+</div>

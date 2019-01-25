@@ -6,6 +6,7 @@ class CompanyRepository extends \Doctrine\ORM\EntityRepository
 {
     public function filter($companyName, $status, $debutDate, $endDate)
     {
+
         //formatter date debut
         $dd = substr($debutDate, 0, 2);
         $md = substr($debutDate, 3, 2);
@@ -16,7 +17,6 @@ class CompanyRepository extends \Doctrine\ORM\EntityRepository
         $me = substr($endDate, 3, 2);
         $ye = substr($endDate, 6, 4);
         $endDate = $ye . "-" . $me . "-" . $de;
-
         $queryBuilder = $this->createQueryBuilder('CO');
         $queryBuilder->add('select', 'CO');
         $queryBuilder->add('from', 'TelmaSelfcarePrepaidBundle:Company CO');

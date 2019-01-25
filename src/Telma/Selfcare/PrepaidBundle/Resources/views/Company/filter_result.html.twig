@@ -1,5 +1,5 @@
 {% if companies != null %}
-    <table class="data">
+    <table class="data_result_serch">
         <tr>
             <th></th>
             <th>Nom</th>
@@ -10,7 +10,8 @@
         <tbody>
         {% for co in companies %}
             <tr>
-                <td></td>
+                <td> <a href="{{ path('company_edit', { 'id': co.id }) }}" data-id="{{ co.id }}" class="{{ co.companyName }}">Edit </a></td>
+                <td> <a href="{{ path('company_delete', { 'id': co.id }) }}" data-id="{{ co.id }}"  class="{{ co.companyName }}">Delete </a></td>
                 {% if co.companyName is not null %}
                     <td>{{ co.companyName }}</td>
                 {% else %}
@@ -28,5 +29,66 @@
         </tbody>
     </table>
 {% else %}
+    <table class="data">
+        <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Date de création</th>
+            <th>Modification par</th>
+            <th>Status</th>
+        </tr>
+    </table>
     <p>Resultat null</p>
 {% endif %}
+
+{% block javascripts %}
+    {#{{ parent() }}#}
+    <script>
+        $(document).ready(function () {
+
+            {#var _id;#}
+            {#function deleteComp(_id){#}
+                {#console.log(_id);#}
+                {#$.ajax({#}
+                    {#url: "{{ path('company_delete', { 'id': _id }) }}" ,#}
+                    {#type: 'POST',#}
+                    {#dataType: 'html',#}
+                    {#data: {#}
+                        {#nomComp: nomComp , statusComp: statusComp, debutDateSearch: debutDateSearch, endDateSearch: endDateSearch#}
+                    {#},#}
+                    {#success: function(data){#}
+                        {#alert("mise à jour avec success");#}
+                    {#},#}
+                    {#error: function (error) {#}
+                        {#console.log(error)#}
+                    {#}#}
+                {#});#}
+            {#}#}
+
+            var idComp = $("").attr('data-id');
+            var search = $('#search-button');
+            search.click(function () {
+                var nomComp = $('#nomComp').val();
+                var statusComp = $('#statusComp').val();
+                var debutDateSearch = $('#debutDateSearch').val();
+                var endDateSearch = $('#endDateSearch').val();
+                $.ajax({
+                    url: "{{ path('company_filter') }}",
+                    type: 'POST',
+                    dataType: 'html',
+                    data: {
+                        nomComp: nomComp , statusComp: statusComp, debutDateSearch: debutDateSearch, endDateSearch: endDateSearch
+                    },
+                    success: function(data){
+                        $('#result').empty();
+                        $('#result').append(data);
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                });
+
+            });
+        })
+    </script>
+{% endblock %}

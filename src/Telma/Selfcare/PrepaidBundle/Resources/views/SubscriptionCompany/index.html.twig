@@ -1,0 +1,79 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .abs {
+            margin-top: 67px!important;
+        }
+        .head_table {
+            background: #ffdd00!important;
+        }
+        .row_data_table:nth-child(even) {
+            background: yellow;
+        }
+        .row_data_table:nth-child(odd) {
+            background: black;
+        }
+        .block_table_result {
+            /*margin-left: 47px;*/
+            border: 1px solid #B4C7D8;
+            /*height: 350px;*/
+            /*margin-bottom: 13px;*/
+        }
+
+    </style>
+{% endblock %}
+{% block class_header_background %}content_header{% endblock %}
+
+
+
+{% block content -%}
+
+    {% include 'TelmaSelfcarePrepaidBundle:Company:nav_menu.html.twig' %}
+    {% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:form_new.html.twig' %}
+    {{ render(controller('TelmaSelfcarePrepaidBundle:SubscriptionCompany:new')) }}
+    {% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:table_list.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.js"></script>
+    {#<script type="text/javascript" src="{{ asset('bundles/telmaselfcareprepaid/js/lib/bootstrap-datepicker.js') }}"></script>#}
+    <script>
+
+        $(document).ready(function () {
+
+            var btn_next = $("a[rel='next']");
+            btn_next.text("Suivant");
+            var btn_prev = $("a[rel='prev']");
+            btn_prev.text("Precedent");
+
+            var label_next = $('li[class=disabled] span').text();
+
+            if (label_next.indexOf('label_next') !== -1)
+            {
+                $('li[class=disabled] span').text("Suivant");
+            }
+
+            if (label_next.indexOf('label_previous') !== -1)
+            {
+                $('li[class=disabled] span').text("Precedent");
+            }
+            var label_next = $('li[class=disabled] span').text();
+
+
+
+            $('.js-datepicker').datepicker({language: 'fr-FR',todayHighlight: true,autoclose: true});
+            $('.js-datepicker').datepicker('setDate','today');
+
+            var error_value = $('.error_value');
+
+            $('#btn-dismiss').click(function () {
+                $('#msg_error').hide();
+            })
+
+
+
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,34 @@
+<div class="">
+    <p style="margin-left: 68px;">Recherche</p>
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'},'action': path('subscriptioncompany'), 'method': 'POST'}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-row text-center">
+        <div class="form-group col-md-3">
+            {{ form_label(form.company, "Entreprise ", {'label_attr': {'class': 'control-label'}}) }}
+            {{ form_errors(form.company) }}
+        </div>
+
+        <div class="form-group col-md-3">
+            {{ form_widget(form.company, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group col-md-3 text-center">
+            {{ form_label(form.subscription, "Numero ", {'label_attr': {'class': 'control-label'}}) }}
+            {{ form_errors(form.subscription) }}
+        </div>
+
+        <div class="form-group col-md-3">
+            {{ form_widget(form.subscription, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="col-md-3 " style="margin-bottom: 25px;">
+            {{ form_widget(form.submit,{'label':'Rechercher'}) }}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+</div>

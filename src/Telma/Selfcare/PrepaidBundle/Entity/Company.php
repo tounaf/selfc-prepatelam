@@ -24,7 +24,7 @@ class Company
     /**
      * @var string
      *
-     * @ORM\Column(name="company_name", type="string", length=255)
+     * @ORM\Column(name="company_name", type="string", length=255, unique=true)
      */
     private $companyName;
 
@@ -45,7 +45,7 @@ class Company
     /**
      * @var User
      *
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_creation", referencedColumnName="id")
      */
     private $userCreation;
@@ -63,12 +63,12 @@ class Company
      *
      * @ORM\Column(name="status", type="boolean")
      */
-    private $status;
+    private $status = true;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adresse", type="string")
+     * @ORM\Column(name="adresse", type="string", nullable=true)
      */
     private $adresse;
 
@@ -76,6 +76,7 @@ class Company
     public function __construct()
     {
         $this->creationDate = new \DateTime();
+        $this->lastUpdate = new \DateTime();
     }
 
     /**
@@ -160,7 +161,6 @@ class Company
         return $this->lastUpdate;
     }
 
-
     /**
      * Set userCreation
      *
@@ -209,9 +209,6 @@ class Company
         return $this->userUpdate;
     }
 
-
-
-
     /**
      * Set status
      *
@@ -257,6 +254,11 @@ class Company
     {
         $this->adresse = $adresse;
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getAdresse();
     }
 }
 

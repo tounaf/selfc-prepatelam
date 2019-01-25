@@ -19,15 +19,7 @@ class CompanyType extends AbstractType
     {
         $builder
             ->add('companyName','text')
-//            ->add('creationDate')
-//            ->add('lastUpdate','date',[
-//                'widget' => 'single_text',
-//                'html5' => false,
-//                'attr' => ['class' => 'js-datepicker'],
-//            ])
             ->add('adresse','text')
-            ->add('status')
-//            ->add('userCreation')
         ;
     }
     

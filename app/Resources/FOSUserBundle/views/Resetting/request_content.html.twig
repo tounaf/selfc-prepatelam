@@ -1,11 +1,107 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{#{% trans_default_domain 'FOSUserBundle' %}#}
+    {#{% for flashMessage in app.session.flashbag.get('notif') %}#}
+    {#<div class="flash-notice notif" style="color: red">#}
+        {#{{ flashMessage }}#}
+    {#</div>#}
+    {#{% endfor %}#}
 
-<form action="{{ path('reset_password') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
+{#<form action="{{ path('reset_password') }}" method="POST" class="fos_user_resetting_request">#}
+    {#<div>#}
+        {#<label for="username">{{ 'resetting.request.username'|trans }}</label>#}
+        {#<input type="text" id="username" name="username" required="required" />#}
+    {#</div>#}
+    {#<div>#}
+        {#<input type="submit" value="{{ 'resetting.request.submit'|trans }}" />#}
+    {#</div>#}
+{#</form>#}
+
+
+{% extends '::base.html.twig' %}
+{#{% form_theme form 'GregwarCaptchaBundle:Form:captcha.html.twig' %}#}
+{% block class_header_background %}content_header rechargeC{% endblock %}
+{% block content -%}
+
+    <div class="abs">
+        <div class="wrap-bg">
+            {% trans_default_domain 'FOSUserBundle' %}
+            {% for flashMessage in app.session.flashbag.get('notif') %}
+                <div class="flash-notice notif" style="color: red;font-size: 15px">
+                    {{ flashMessage }}<button type="button" id="btn-dismiss" style="color: red;font-size: 10px;background: yellow" class="close" data-dismiss="modal">&times;</button>
+                </div>
+            {% endfor %}
+
+            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader" style="padding-top: 5px!important;">Veuillez entrer votre login, nous enverrons votre nouveau mot de passe par email</div></div>
+            <div class="acont_bg">
+                <form method="POST" name="rechargeForm" id="rechargeForm" action="{{ url('reset_password') }}">
+                    {#{% if csrf_token %}#}
+                        {#<input type="hidden" class="form-control" name="_csrf_token" value="{{ csrf_token }}"/>#}
+                    {#{% endif %}#}
+                        <div class="clearfix">
+                            <label class="text11noirnormal flot pad_cont_a_div1">Identifiant *</label>
+                            <p class="transparency_bouton flot"><input type="email" value=""  class="text11vertnormal" required="required" name="username" id="username">
+
+                            </p>
+                        </div>
+                        <div class="afooter_bg">
+                            <div class="boutoun_valide"><button type="submit" id="_submit" name="_submit"><img  src="{{ asset('bundles/telmaselfcareprepaid/images/rechargenligne_bouton_valide.jpg')}}" border="0" width="82" height="25"></button></div>
+                        </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
+
+    <div class="text11noirnormal flot">
+        <div class=" pad_content_bas_divglobal">
+            <span class="text12noirbold">Rechargez votre compte TELMA :</span><br />
+            <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
+        </div>
     </div>
-</form>
+    <div class="clear"></div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $("#submit_recharge").click(function(){
+            var pattern = /^\d+$/;
+            $('#pop-error').empty();
+            var submit = true;
+            if (! pattern.test($("#recharge_numero").val()) || ($("#recharge_numero").val()).length < 10
+                || ($("#recharge_numero").val().substr(0, 3) !== "034" && $("#recharge_numero").val().substr(0, 3) !== "020")  ){
+                $('#pop-error').append("<ul><li>Numéro erroné. Veuillez ressaisir votre numéro Telma.</li></ul>");
+                submit = false;
+            }
+            if (! pattern.test($("#recharge_codeRecharge").val()) || ($("#recharge_codeRecharge").val()).length < 14 ){
+                $('#pop-error').append("<ul><li>Code de recharge erroné. Veuillez vérifier votre code...</li></ul>");
+                submit = false;
+            }
+            if( $('#recharge_captcha').val().length < 4 ){
+                $('#pop-error').append("<ul><li>Code visuel incorrect! Veuillez le ressaisir svp....</li></ul>");
+                submit = false;
+            }
+            if (submit){
+                $('#rechargeForm').submit();
+            }else{
+                $("#link_error").trigger('click');
+            }
+        });
+
+        $(document).ready(function(){
+            $("#btn-dismiss").click(function () {
+                $('.notif').css('display','none');
+                $(this).css('display','none');
+            })
+            $('.error').attr('tabindex', '-1');
+            if($('#display_error').val())
+                $("#link_error").trigger('click');
+            {% if message is defined %}
+            $('#pop-error').empty();
+            $('#pop-error').append("<ul><li>{{ message }}</li></ul>");
+            $("#link_error").trigger('click');
+            {% endif %}
+        });
+        function validateForm(){
+            $("#submit_recharge").trigger('click');
+        }
+    </script>
+{% endblock %}

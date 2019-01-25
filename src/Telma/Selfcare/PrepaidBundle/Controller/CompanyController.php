@@ -22,37 +22,57 @@ class CompanyController extends Controller
      * Lists all Company entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $companies = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->findAll();
-
-        return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array(
-            'companies' => $companies,
-        ));
+        $companyName = $request->get('nomComp');
+        $status = $request->get('statusComp');
+        $debutDate = $request->get('debutDateSearch');
+        $endDate = $request->get('endDateSearch');
+        $companies = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->filter($companyName, $status, $debutDate, $endDate);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($companies,
+            $request->query->getInt('page', 0),
+            $request->query->getInt('limit', 5)
+        );
+        if($debutDate > $endDate and $request->isMethod('GET')) {
+            $this->get('session')->getFlashBag()->add("invalid_date", "La date de debut doit inférieur ou égal à la date fin ");
+            return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array('pagination' => $pagination));
+        } else {
+            return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array('pagination' => $pagination));
+        }
     }
+
     /**
      * Creates a new Company company.
      *
      */
     public function createAction(Request $request)
     {
-        $user = $this->getUser();
-        $company = new Company();
-        $company->setUserCreation($user);
-        $form = $this->createCreateForm($company);
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($company);
-            $em->flush();
-            return $this->redirect($this->generateUrl('company_show', array('id' => $company->getId())));
+        if (is_object($this->get('security.context')->getToken()->getUser())) {
+            $user = $this->getUser();
+            if ($user->getIsAdmin() == 1) {
+                $nomComp = $request->get('nomComp');
+                $adressComp = $request->get('adressComp');
+                $exitComp = $this->getDoctrine()->getManager()->getRepository('TelmaSelfcarePrepaidBundle:Company')->findOneBy(array('companyName' => $nomComp));
+                if ($exitComp) {
+                    $this->get('session')->getFlashBag()->add("existe_company", "Ce nom existe déjà en base");
+                    return $this->redirectToRoute('company_new');
+                } else {
+                    $company = new Company();
+                    $company->setUserCreation($user);
+                    $company->setCompanyName($nomComp);
+                    $company->setAdresse($adressComp);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($company);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('company'));
+                }
+            }
+        } else {
+            $this->get('session')->getFlashBag()->add("denied", "Acces refué ");
+            return $this->redirectToRoute('fos_user_security_login', array());
         }
-        return $this->render('TelmaSelfcarePrepaidBundle:Company:new.html.twig', array(
-            'company' => $company,
-            'form'   => $form->createView(),
-        ));
     }
 
     /**
@@ -107,7 +127,7 @@ class CompanyController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('TelmaSelfcarePrepaidBundle:Company:show.html.twig', array(
+        return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array(
             'company'      => $company,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -155,6 +175,7 @@ class CompanyController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Company company.
      *
@@ -162,32 +183,20 @@ class CompanyController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-        $userCompany = new UserCompanyUpdate();
         $company = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->find($id);
-
         if (!$company) {
             throw $this->createNotFoundException('Unable to find Company company.');
         }
-
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($company);
         $editForm->handleRequest($request);
-
         if ($editForm->isValid()) {
-//            $userCompany->setUpdatedAt(new \DateTime());
-//            $userCompany->setUserUpdate($this->getUser());
-//            $userCompany->setCompanyUpdated($company);
-//            $em->persist($userCompany);
             $company->setUserUpdate($this->getUser());
             $company->setLastUpdate(new \DateTime());
-//            $em->persist($company);
             $em->flush();
-
-
-
+            return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array());
             return $this->redirect($this->generateUrl('company_edit', array('id' => $id)));
         }
-
         return $this->render('TelmaSelfcarePrepaidBundle:Company:edit.html.twig', array(
             'company'      => $company,
             'edit_form'   => $editForm->createView(),
@@ -203,7 +212,7 @@ class CompanyController extends Controller
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isValid() || $request->isMethod('GET')) {
             $em = $this->getDoctrine()->getManager();
             $company = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->find($id);
 
@@ -242,15 +251,21 @@ class CompanyController extends Controller
         $status = $request->get('statusComp');
         $debutDate = $request->get('debutDateSearch');
         $endDate = $request->get('endDateSearch');
-//        print_r($companyName);
-//        print_r($status);
-//        print_r($debutDate);
-//        print_r($endDate);
-//        die();
         $companies = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->filter($companyName, $status, $debutDate, $endDate);
-        return $this->render('TelmaSelfcarePrepaidBundle:Company:filter_result.html.twig', array(
-            'companies'      => $companies
-        ));
+//        return $this->render('TelmaSelfcarePrepaidBundle:Company:filter_result.html.twig', array(
+//            'companies'      => $companies
+//        ));
+
+//        $em = $this->getDoctrine()->getManager();
+//        $query = $em->getRepository('PocsBundle:Article')
+//            ->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($companies,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 3));
+
+        // parameters to template
+        return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array('pagination' => $pagination));
 
 
     }

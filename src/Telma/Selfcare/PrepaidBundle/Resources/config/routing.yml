@@ -1,6 +1,10 @@
+telma_selfcare_prepaid_subscriptioncompany:
+    resource: "@TelmaSelfcarePrepaidBundle/Resources/config/routing/subscriptioncompany.yml"
+    prefix:   /subscriptioncompany
+
 telma_selfcare_prepaid_company:
     resource: "@TelmaSelfcarePrepaidBundle/Resources/config/routing/company.yml"
-    prefix:   /company
+    prefix:   /dashboard/company
 
 telma_selfcare_prepaid_homepage:
     path:     /

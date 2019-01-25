@@ -34,7 +34,7 @@ security:
                 use_forward: false
                 use_referer: true
                 check_path: /login_check
-                default_target_path: /
+                default_target_path: /dashboard/company
 #                failure_path:   null
             logout:
               path: /logout

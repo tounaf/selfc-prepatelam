@@ -1,13 +1,17 @@
 
 {% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+
+    {#<link href="{{ asset('bundles/telmaselfcareprepaid/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />#}
+{% endblock %}
 {#{% form_theme form 'GregwarCaptchaBundle:Form:captcha.html.twig' %}#}
 {% block class_header_background %}content_header rechargeC{% endblock %}
 {% block content -%}
 
-    <div class="d-flex justify-items-right"><button class="btn btn-success">Administrateur</button>  Administrateur</div>
     <div class="text11noirnormal flot">
         <div class=" pad_content_bas_divglobal">
-            <span class="text12noirbold">Rechargez votre compte TELMA :{% if app.user %} {{ app.user.email }} {% endif %}</span><br />
+            <span class="text12noirbold">Rechargez votre compte TELMA : <button class="btn btn-success"> {% if app.user %} {{ app.user.email }} {% endif %}</button></span><br />
             <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
             <p>Munissez-vous d'une carte de recharge TELMA et indiquez dans l'espace &laquo; Rechargez Votre Compte TELMA &raquo;   : </p>
             <div class="pad_div_list">- Le num&eacute;ro de t&eacute;l&eacute;phone que vous souhaitez recharger <br />

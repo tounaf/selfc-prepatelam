@@ -1,16 +1,73 @@
+
+
 {% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .abs {
+            margin-top: 67px!important;
+        }
+    </style>
+{% endblock %}
+{% block class_header_background %}content_header rechargeC{% endblock %}
+{% block content -%}
 
-{% block content %}
-    <h1>Company edit</h1>
+    {% include 'TelmaSelfcarePrepaidBundle:Company:nav_menu.html.twig' %}
+    <div class="abs">
+        <div class="wrap-bg">
+            {% trans_default_domain 'FOSUserBundle' %}
+            {#{% for flashMessage in app.session.flashbag.get('denied') %}#}
+                {#<div class="flash-notice notif" style="color: red;font-size: 15px">#}
+                    {#{{ flashMessage }}<button type="button" id="btn-dismiss" style="color: red;font-size: 10px;background: yellow" class="close" data-dismiss="modal">&times;</button>#}
+                {#</div>#}
+            {#{% endfor %}#}
+            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Création d'une entreprise</div></div>
+            <div class="acont_bg">
+                {{ form_start(edit_form) }}
+                    <div class="clearfix">
+                        <label class="text11noirnormal flot pad_cont_a_div1">
+                            Nom
+                        </label>
+                        <p class="transparency_bouton flot">
+                            {{ form_widget(edit_form.companyName,{'attr':{'readonly':true}}) }}
+                        </p>
+                    </div>
+                    <div class="clearfix">
+                        <label class="text11noirnormal flot pad_cont_a_div1">Adresse *</label>
+                        <div class="flot rposition clearfix">
+                            <p class="transparency_bouton flot">
+                                {{ form_widget(edit_form.adresse, {'attr':{'name':'adresse'}}) }}
+                            </p>
+                            <p class="btnHelp"><a href="#pop-error1" id="popin"  class="error1" href="{{ asset('bundles/telmaselfcareprepaid/images/poppin_recharge.jpg') }}"></a></p>
+                            <p><a href="#pop-error" id="link_error" class="error"></a></p>
+                        </div>
+                    </div>
+                    <div class="btn_create_comp">
+                        {{ form_row(edit_form.submit, { 'label': 'Mettre à jour' }) }}
+                    </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
 
-    {{ form(edit_form) }}
+    </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('company') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="text11noirnormal flot">
+        <div class=" pad_content_bas_divglobal">
+
+            <p style="padding-right: 100px">Pour vous connecter,veuillez saisir votre login (adresse email) et votre mot de passe.</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $("#btn-dismiss").click(function () {
+                $('.notif').css('display','none');
+                $(this).css('display','none');
+            })
+        });
+    </script>
 {% endblock %}

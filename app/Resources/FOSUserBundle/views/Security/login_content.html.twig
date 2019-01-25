@@ -37,9 +37,9 @@
         <div class="wrap-bg">
             {% trans_default_domain 'FOSUserBundle' %}
             {% if error %}
-                <div style="color:red;">{{ 'erreur.login' |trans }}</div>
+                <div style="color:red;">{{ "votro compte n \' existe pas encore dans la base ou à été désactivé.Merci de contacter votre supérieur " |trans }}</div>
             {% endif %}
-            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Authentification {% if app.user %}{{ app.user.email }}{% endif %}</div></div>
+            <div class="aheader_bg text14noirbold"><div class="pad_cont_aheader">Authentification </div></div>
             <div class="acont_bg">
                 <form method="POST" name="rechargeForm" id="rechargeForm" action="{{ url('fos_user_security_check') }}">
                     {% if csrf_token %}
@@ -72,14 +72,10 @@
 
     <div class="text11noirnormal flot">
         <div class=" pad_content_bas_divglobal">
-            <span class="text12noirbold">Rechargez votre compte TELMA :</span><br />
-            <p>Votre cr&eacute;dit est &eacute;puis&eacute;, vous pouvez &agrave; tout instant recharger votre compte TELMA via cet espace de rechargement en ligne.</p>
-            <p>Munissez-vous d'une carte de recharge TELMA et indiquez dans l'espace &laquo; Rechargez Votre Compte TELMA &raquo;   : </p>
-            <div class="pad_div_list">- Le num&eacute;ro de t&eacute;l&eacute;phone que vous souhaitez recharger <br />
-                <span class="add">-  Les 14 chiffres de votre code de recharge</span><br />
-                - Le code visuel
-            </div>
-            <p>Cliquez sur &laquo; VALIDEZ &raquo; pour confirmer le rechargement</p></div></div>
+
+            <p style="padding-right: 100px">Pour vous connecter,veuillez saisir votre login (adresse email) et votre mot de passe.</p>
+        </div>
+    </div>
     <div class="clear"></div>
     </div>
 {% endblock %}

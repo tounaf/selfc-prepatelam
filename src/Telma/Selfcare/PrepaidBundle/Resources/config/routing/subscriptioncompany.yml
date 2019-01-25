@@ -1,0 +1,30 @@
+subscriptioncompany:
+    path:     /
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:index" }
+    methods: [GET, POST]
+subscriptioncompany_show:
+    path:     /{id}/show
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:show" }
+#
+#subscriptioncompany_new:
+#    path:     /new
+#    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:new" }
+
+subscriptioncompany_create:
+    path:     /create
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:create" }
+    methods:  POST
+
+subscriptioncompany_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:edit" }
+
+subscriptioncompany_update:
+    path:     /{id}/update
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:update" }
+    methods:  [POST, PUT]
+
+subscriptioncompany_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:SubscriptionCompany:delete" }
+    methods:  [POST, DELETE, GET]
