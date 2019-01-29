@@ -2,7 +2,11 @@
 
 namespace Telma\Selfcare\PrepaidBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\AttributeOverrides;
+use Doctrine\ORM\Mapping\AttributeOverride;
+use Telma\Selfcare\PrepaidBundle\Util;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
@@ -10,6 +14,21 @@ use FOS\UserBundle\Model\User as BaseUser;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Telma\Selfcare\PrepaidBundle\Repository\UserRepository")
+ * @AttributeOverrides({
+ *      @AttributeOverride(name="username",
+ *          column=@ORM\Column(
+ *              name     = "username",
+ *              nullable = true,
+ *          )
+ *      ),
+ *      @AttributeOverride(name="usernameCanonical",
+ *          column=@ORM\Column(
+ *              name     = "usernameCanonical",
+ *              nullable = true,
+ *          )
+ *      )
+ * })
+ * @ORM\HasLifecycleCallbacks()
  */
 class User extends BaseUser
 {
@@ -57,6 +76,19 @@ class User extends BaseUser
      */
     private $isAdmin;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Company", cascade={"persist","remove","merge"})
+     *
+     */
+    private $companies;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
 
     /**
      * User constructor.
@@ -64,7 +96,53 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->createdAt = new \DateTime();
+//        $this->companies = new ArrayCollection();
 
+    }
+
+    public function addCompany(Company $companies)
+    {
+        $this->companies[] = $companies;
+
+        return $this;
+    }
+
+    public function removeCompany(Company $companies)
+    {
+        $this->companies->removeElement($companies);
+    }
+
+    /**Get companies
+     * @return Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getCompanies()
+    {
+        return $this->companies;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return User
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 
     /**
@@ -195,6 +273,29 @@ class User extends BaseUser
     public function getIsAdmin()
     {
         return $this->isAdmin;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    function setEnabledUser()
+    {
+        $this->setEnabled(true);
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    function updateEnabledUser()
+    {
+        $this->setEnabled($this->isValid);
+    }
+
+
+
+    public function __toString()
+    {
+        return (string) $this->getCompanies();
     }
 }
 

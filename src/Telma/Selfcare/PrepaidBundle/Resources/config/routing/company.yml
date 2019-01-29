@@ -28,6 +28,7 @@ company_delete:
     path:     /{id}/delete
     defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:delete" }
     methods:  [POST, DELETE, GET]
+
 company_filter:
     path: /filter-list
     defaults: { _controller: "TelmaSelfcarePrepaidBundle:Company:filter" }

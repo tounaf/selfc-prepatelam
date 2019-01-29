@@ -37,10 +37,7 @@
 
     {% include 'TelmaSelfcarePrepaidBundle:Company:nav_menu.html.twig' %}
     <div class="container-fluid">
-        {#{% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:form_new.html.twig' %}#}
-        {{ render(controller('TelmaSelfcarePrepaidBundle:SubscriptionCompany:new')) }}
-        {{ render(controller('TelmaSelfcarePrepaidBundle:SubscriptionCompany:filter')) }}
-        {% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:table_list.html.twig' %}
+        {% include 'TelmaSelfcarePrepaidBundle:User:new_content.html.twig'%}
     </div>
 
 {% endblock %}

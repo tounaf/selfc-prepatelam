@@ -6,6 +6,10 @@ telma_selfcare_prepaid_company:
     resource: "@TelmaSelfcarePrepaidBundle/Resources/config/routing/company.yml"
     prefix:   /dashboard/company
 
+telma_selfcare_prepaid_user:
+    resource: "@TelmaSelfcarePrepaidBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 telma_selfcare_prepaid_homepage:
     path:     /
     defaults: { _controller: TelmaSelfcarePrepaidBundle:Default:index }

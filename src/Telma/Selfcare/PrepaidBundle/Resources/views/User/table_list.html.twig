@@ -1,0 +1,70 @@
+
+    <div class="col-md-12 block_table_result">
+        <p>Utilisateurs existants</p>
+        <table id="data-table" class="table table-striped">
+            <tr class="head_table">
+                <th></th>
+                <th>Login</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de création</th>
+                <th>Entreprise</th>
+                <th>Status</th>
+                <th>Type</th>
+            </tr>
+
+            {# table body #}
+        {% if pagination is defined %}
+            {% if pagination | length > 0 %}
+                {% for user in pagination %}
+                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+
+                        <th>
+                                <a href="{{ path('user_edit',{ 'id': user.id }) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a href="{{ path('user') }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a href="{{ path('user') }}"><i class="fa fa-phone" aria-hidden="true"></i></a>
+
+                                {#<a href="{{ path('company_edit', { 'id': company.id }) }}"></a>#}
+
+                        </th>
+
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        <td>{{ user.createdAt |date("d-M-Y") }}</td>
+                        <td>
+                            {% for company in user.companies %}
+                                {{ company.companyName }},
+                            {% endfor %}
+                        </td>
+                        {% if user.isValid == 1 %}
+                            <td>Actif</td>
+                        {% else %}
+                            <td>Inactif</td>
+                        {% endif %}
+                        {% if user.isAdmin == 1 %}
+                            <td>Administrateur</td>
+                        {% else %}
+                            <td>Utilisateur</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td></td>
+                    {% if pagination | length == 0 %}
+                        <td class="text-center" colspan="4">Aucun résultat</td>
+                    {% endif %}
+                </tr>
+            {% endif %}
+        {% endif %}
+
+        </table>
+        {% if pagination is defined %}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        {% endif %}
+    </div>
+
+    {# display navigation #}

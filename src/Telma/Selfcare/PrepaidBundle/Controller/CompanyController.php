@@ -32,8 +32,8 @@ class CompanyController extends Controller
         $companies = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->filter($companyName, $status, $debutDate, $endDate);
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate($companies,
-            $request->query->getInt('page', 0),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 10)
         );
         if($debutDate > $endDate and $request->isMethod('GET')) {
             $this->get('session')->getFlashBag()->add("invalid_date", "La date de debut doit inférieur ou égal à la date fin ");
@@ -66,6 +66,7 @@ class CompanyController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($company);
                     $em->flush();
+                    $this->get('session')->getFlashBag()->add("create_success", "Creation de l'entreprise ".$company->getCompanyName()." avec succès");
                     return $this->redirect($this->generateUrl('company'));
                 }
             }
@@ -194,8 +195,9 @@ class CompanyController extends Controller
             $company->setUserUpdate($this->getUser());
             $company->setLastUpdate(new \DateTime());
             $em->flush();
-            return $this->render('TelmaSelfcarePrepaidBundle:Company:index.html.twig', array());
-            return $this->redirect($this->generateUrl('company_edit', array('id' => $id)));
+
+            $this->get('session')->getFlashBag()->add("update_success", "Mise à jour de l ' entreprise ".$company->getCompanyName()." avec succès");
+            return $this->redirect($this->generateUrl('company'));
         }
         return $this->render('TelmaSelfcarePrepaidBundle:Company:edit.html.twig', array(
             'company'      => $company,

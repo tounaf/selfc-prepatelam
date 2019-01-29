@@ -19,28 +19,14 @@
 
                             {% if app.user.isAdmin %}
                                 <li><a href="{{ path('company') }}">Gestion des entreprises</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Gestion des utilisateurs</a></li>
                                 <li><a href="{{ path('company_new') }}">Créer</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ path('user') }}">Gestion des utilisateurs</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ path('subscriptioncompany') }}">Subscription</a></li>
                             {% endif %}
                             <li role="separator" class="divider"></li>
                             <li  class="dropdown-header"><a href="{{ path("fos_user_security_logout") }}">Deconnexion</a></li>
-                            {#<li class="dropdown-submenu">#}
-                            {#<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>#}
-                            {#<ul class="dropdown-menu">#}
-                            {#<li><a tabindex="-1" href="#">2nd level dropdown</a></li>#}
-                            {#<li><a tabindex="-1" href="#">2nd level dropdown</a></li>#}
-                            {#<li class="dropdown-submenu">#}
-                            {#<a class="test" href="#">Another dropdown <span class="caret"></span></a>#}
-                            {#<ul class="dropdown-menu">#}
-                            {#<li><a href="#">3rd level dropdown</a></li>#}
-                            {#<li><a href="#">3rd level dropdown</a></li>#}
-                            {#</ul>#}
-                            {#</li>#}
-                            {#</ul>#}
-                            {#</li>#}
 
                         </ul>
                     </li>

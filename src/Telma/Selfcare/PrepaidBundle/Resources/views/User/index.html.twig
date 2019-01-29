@@ -37,10 +37,18 @@
 
     {% include 'TelmaSelfcarePrepaidBundle:Company:nav_menu.html.twig' %}
     <div class="container-fluid">
-        {#{% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:form_new.html.twig' %}#}
-        {{ render(controller('TelmaSelfcarePrepaidBundle:SubscriptionCompany:new')) }}
-        {{ render(controller('TelmaSelfcarePrepaidBundle:SubscriptionCompany:filter')) }}
-        {% include 'TelmaSelfcarePrepaidBundle:SubscriptionCompany:table_list.html.twig' %}
+        {#{% for label, messages in app.session.flashbag.get(['update_success','create_success']) %}#}
+            {#{% for message in messages %}#}
+            {#<div class="alert alert-success alert_value" style="display: block">#}
+                {#<div class="flash-notice notif" style="font-size: 15px">#}
+                    {#{{ message }}<button type="button" id="btn-dismiss" style="color: red;font-size: 10px;background: yellow" class="close" data-dismiss="modal">&times;</button>#}
+                {#</div>#}
+            {#</div>#}
+            {#{% endfor %}#}
+        {#{% endfor %}#}
+
+        {{ render(controller('TelmaSelfcarePrepaidBundle:User:filter')) }}
+        {% include 'TelmaSelfcarePrepaidBundle:User:table_list.html.twig' %}
     </div>
 
 {% endblock %}
@@ -80,6 +88,44 @@
 
             $('#btn-dismiss').click(function () {
                 $('#msg_error').hide();
+            })
+
+            var alert_value = $('.alert_value');
+
+            $('#debutDateSearch')
+                .datepicker()
+                .on('changeDate', function(ev){
+                    var endDateSearch = $('#endDateSearch').val();
+                    console.log(endDateSearch);
+                    if ($(this).val() > endDateSearch){
+                        alert_value.css('display','block');
+                        $('#search-button').prop('disabled',true);
+                    } else {
+                        alert_value.css('display','none');
+                        $('#search-button').prop('disabled',false);
+                        alert_value.hide();
+                    }
+                    $('#debutDateSearch').datepicker('hide');
+                });
+
+            $('#endDateSearch')
+                .datepicker()
+                .on('changeDate', function(ev){
+                    var debutDateSearch = $('#debutDateSearch').val();
+                    console.log(debutDateSearch);
+                    if ($(this).val() < debutDateSearch){
+                        alert_value.css('display','block');
+                        $('#search-button').prop('disabled',true);
+                    } else {
+                        alert_value.css('display','none');
+                        $('#search-button').prop('disabled',false);
+                        alert_value.hide();
+                    }
+                    $('#endDateSearch').datepicker('hide');
+                });
+
+            alert_value.click(function () {
+                $(this).css('display','none')
             })
 
 

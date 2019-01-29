@@ -1,0 +1,77 @@
+<legend class="small text-search">Recherche d'entreprise</legend>
+<div class="col-md-12 text11noirnormal flot block_form_search">
+    <div class="alert alert-danger alert_value" style="display: none">
+        <div class="flash-notice notif" style="color: red;font-size: 15px">
+            La date de debut doit inférieur ou égal à la date fin
+        </div>
+    </div>
+
+    {{ form_start(form, {'attr': {'class': 'pad_content_bas_divglobal'}}) }}
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label class="control-label col-sm-2" for="company_nom">Login</label>
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-3">
+                <label for="">Status</label>
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_widget(form.isAdmin) }}
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label class="control-label" for="company_nom">Nom</label>
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-2">
+                <label class="control-label" for="company_nom">Création du</label>
+            </div>
+            <div class="form-group col-md-2">
+                <input class="form-control js-datepicker" type="text" data-date-format="dd/mm/yyyy" id="debutDateSearch"  name="debutDateSearch">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="">au</label>
+            </div>
+            <div class="form-group col-md-2">
+                <input class="form-control js-datepicker" type="text" data-date-format="dd/mm/yyyy" id="endDateSearch"  name="endDateSearch">
+            </div>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-2">
+                <label for="">Prenom</label>
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="company_nom">Entreprise</label>
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_widget(form.companies) }}
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="btn-group col-md-3">
+                <button class="btn btn-default" type="submit" id="search-button">Rechercher</button>
+            </div>
+        </div>
+
+        <div class="form-row" style="display: none">
+            <div class="btn-group col-md-3">
+                {{ form_widget(form.isValid) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+</div>

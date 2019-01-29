@@ -1,0 +1,23 @@
+user:
+    path:     /
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:index" }
+
+user_new:
+    path:     /new
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:new" }
+
+user_create:
+    path:     /create
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:create" }
+    methods:  POST
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:edit" }
+
+user_update:
+    path:     /{id}/update
+    defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:update" }
+    methods:  [POST, PUT]
+
+

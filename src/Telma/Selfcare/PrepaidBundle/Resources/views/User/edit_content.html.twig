@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-md-12 well block_form_sc">
+        {% for flashMessage in app.session.flashbag.get('numAttached') %}
+            <div id="msg_error" class="alert alert-danger flash-notice notif" style="color: red;font-size: 15px;">
+                {{ flashMessage }}<button type="button" id="btn-dismiss" style="color: red;font-size: 10px;background: yellow" class="close" data-dismiss="modal">&times;</button>
+            </div>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('update_success') %}
+            <div id="msg_error" class="alert alert-success flash-notice notif" style="font-size: 15px;">
+                {{ flashMessage }}<button type="button" id="btn-dismiss" style="font-size: 10px;background: yellow" class="close" data-dismiss="modal">&times;</button>
+            </div>
+        {% endfor %}
+        <p>Rattachement numéro</p>
+
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+
+        <div class="form-row text-center">
+            <div class="form-group">
+                {{ form_label(form.email, "Login *", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.email) }}
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            {#<div class="form-group col-md-3">#}
+            {#{{ form_widget(form.company, {'attr': {'class': 'form-control'}}) }}#}
+            {#</div>#}
+
+            <div class="form-group text-center">
+                {{ form_label(form.nom, "Nom *", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.nom) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.nom, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                {{ form_label(form.prenom, "Prenom ", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.prenom) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                {{ form_label(form.isAdmin, "Profil *", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.isAdmin) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.isAdmin, {'attr': {'class': 'form-control' }}) }}
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                {{ form_label(form.isValid, "Status *", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.isValid) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.isValid, {'attr': { 'class': 'form-control' }}) }}
+                </div>
+            </div>
+
+
+            <div class="form-group text-center">
+                {{ form_label(form.companies, "Entreprise *", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+                {{ form_errors(form.companies) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_widget(form.companies, {'attr': {'class': ''}}) }}
+                </div>
+            </div>
+
+            {#<div class="form-group col-md-3">#}
+            {#{{ form_widget(form.subscription, {'attr': {'class': 'form-control'}}) }}#}
+            {#</div>#}
+
+            <div class="form-group " style="margin-bottom: 25px;">
+                <div class="col-md-3 col-md-offset-2">
+                    {{ form_widget(form.submit,{'label':'Valider'}) }}
+                </div>
+
+            </div>
+        </div>
+        {{ form_rest(form) }}
+        {# Fermeture de la balise <form> du formulaire HTML #}
+        {{ form_end(form) }}
+
+
+    </div>
+
+</div>
+
+
+
+
+

@@ -38,8 +38,8 @@ class SubscriptionCompanyController extends Controller
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
             $subComps,
-            $request->query->getInt('page', 0),
-            $request->query->getInt('limit', 1)
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 10)
         );
 
         return $this->render('TelmaSelfcarePrepaidBundle:SubscriptionCompany:index.html.twig', array(
@@ -54,41 +54,28 @@ class SubscriptionCompanyController extends Controller
     public function createAction(Request $request)
     {
 
-        $nomComp = $request->get('nomComp');
-        $numSub = $request->get('numSub');
-        $em = $this->getDoctrine()->getManager();
-        $numAttached = $em->getRepository('TelmaSelfcarePrepaidBundle:SubscriptionCompany')->findOneBy(['subscription' => $numSub]);
-        //numero existe deja
-        if ($numAttached) {
-            //numero deja attache
-            if ($numAttached->getCompany()) {
-                $this->get('session')->getFlashBag()->add("numAttached", "Ce numéro est déjà rattaché à une entreprise");
-                return $this->redirect($this->generateUrl('subscriptioncompany'));
+        $entity = new SubscriptionCompany();
+        $form = $this->createCreateForm($entity);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $numSub = $form->getData()->getSubscription();
+            $em = $this->getDoctrine()->getManager();
+            $numAttached = $em->getRepository('TelmaSelfcarePrepaidBundle:SubscriptionCompany')->findOneBy(['subscription' => $numSub]);
+            //numero existe deja
+            if ($numAttached) {
+                //numero deja attache
+                if ($numAttached->getCompany()) {
+                    $this->get('session')->getFlashBag()->add("numAttached", "Ce numéro est déjà rattaché à une entreprise");
+                    return $this->redirect($this->generateUrl('subscriptioncompany'));
+                } else {
+                    $this->get('session')->getFlashBag()->add("numExiste", "Ce numéro existe déjà ");
+                    return $this->redirect($this->generateUrl('subscriptioncompany'));
+                }
             } else {
-                $this->get('session')->getFlashBag()->add("numExiste", "Ce numéro existe déjà ");
+                $em->persist($entity);
+                $em->flush();
                 return $this->redirect($this->generateUrl('subscriptioncompany'));
             }
-        }
-        $compExist = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->findOneBy(array('companyName' => $nomComp));
-        $entities = new SubscriptionCompany();
-        if ($compExist) {
-            $entities->setCompany($compExist);
-            $entities->setSubscription($numSub);
-            $em->persist($entities);
-            $em->flush();
-            return $this->redirect($this->generateUrl('subscriptioncompany'));
-        } else {
-            $newComp = new Company();
-            $newComp->setCompanyName($nomComp);
-            $newComp->setUserCreation($this->getUser());
-            $em->persist($newComp);
-            $em->flush();
-            $thisNewComp = $em->getRepository('TelmaSelfcarePrepaidBundle:Company')->findOneBy(array('companyName' => $nomComp));
-            $entities->setCompany($thisNewComp);
-            $entities->setSubscription($numSub);
-            $em->persist($entities);
-            $em->flush();
-            return $this->redirect($this->generateUrl('subscriptioncompany'));
         }
 
     }
@@ -116,12 +103,28 @@ class SubscriptionCompanyController extends Controller
      * Displays a form to create a new SubscriptionCompany entity.
      *
      */
-    public function newAction()
+    public function filterAction()
     {
         $entity = new SubscriptionCompany();
         $form = $this->createCreateForm($entity);
 
         return $this->render('TelmaSelfcarePrepaidBundle:SubscriptionCompany:form_filter.html.twig', array(
+            'entity' => $entity,
+            'form' => $form->createView(),
+        ));
+    }
+
+
+    /**
+     * Displays a form to create a new SubscriptionCompany entity.
+     *
+     */
+    public function newAction()
+    {
+        $entity = new SubscriptionCompany();
+        $form = $this->createCreateForm($entity);
+
+        return $this->render('TelmaSelfcarePrepaidBundle:SubscriptionCompany:form_new.html.twig', array(
             'entity' => $entity,
             'form' => $form->createView(),
         ));

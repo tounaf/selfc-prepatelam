@@ -1,4 +1,4 @@
-<div class="">
+<div class="row well block_form_search">
     <p style="margin-left: 68px;">Recherche</p>
     {{ form_start(form, {'attr': {'class': 'form-horizontal'},'action': path('subscriptioncompany'), 'method': 'POST'}) }}
 
@@ -21,7 +21,7 @@
         </div>
 
         <div class="form-group col-md-3">
-            {{ form_widget(form.subscription, {'attr': {'class': 'form-control'}}) }}
+            {{ form_widget(form.subscription, {'attr': {'class': 'form-control','maxlenght':'7'}}) }}
         </div>
 
         <div class="col-md-3 " style="margin-bottom: 25px;">
