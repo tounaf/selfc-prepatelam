@@ -36,7 +36,7 @@
                 {{ form_errors(form.nom) }}
 
                 <div class="form-group col-md-3">
-                    {{ form_widget(form.nom, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                 {{ form_errors(form.prenom) }}
 
                 <div class="form-group col-md-3">
-                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
                 </div>
             </div>
 
@@ -54,14 +54,14 @@
                 {{ form_errors(form.isAdmin) }}
 
                 <div class="form-group col-md-3">
-                    {{ form_widget(form.isAdmin, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                    {{ form_widget(form.isAdmin, {'attr': {'class': 'form-control'}}) }}
                 </div>
             </div>
 
             <div class="form-group text-center" style="display: none;">
                 {{ form_label(form.isValid, "Status ", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
                 <div class="form-group col-md-3">
-                    {{ form_widget(form.isAdmin, {'attr': {'class': 'form-control','maxlength': '7'}}) }}
+                    {{ form_widget(form.isValid, {'attr': {'class': 'form-control'}}) }}
                 </div>
             </div>
 

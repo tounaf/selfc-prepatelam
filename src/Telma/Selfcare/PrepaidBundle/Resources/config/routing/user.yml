@@ -1,7 +1,7 @@
 user:
     path:     /
     defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:index" }
-
+    methods:  [POST, GET]
 user_new:
     path:     /new
     defaults: { _controller: "TelmaSelfcarePrepaidBundle:User:new" }

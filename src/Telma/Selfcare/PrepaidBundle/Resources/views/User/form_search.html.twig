@@ -5,20 +5,26 @@
             La date de debut doit inférieur ou égal à la date fin
         </div>
     </div>
-
-    {{ form_start(form, {'attr': {'class': 'pad_content_bas_divglobal'}}) }}
+    <form action="{{ path('user') }}", method="post">
+    {#{{ form_start(form, {'attr': {'class': 'pad_content_bas_divglobal','method': 'POST'}}) }}#}
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label class="control-label col-sm-2" for="company_nom">Login</label>
             </div>
             <div class="form-group col-md-3">
-                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                <input class="form-control" type="text" id="userLogin"  name="userLogin">
+                {#{{ form_widget(form.email, {'attr': {'class': 'form-control','type':'text'}}) }}#}
             </div>
             <div class="form-group col-md-3">
                 <label for="">Status</label>
             </div>
             <div class="form-group col-md-3">
-                {{ form_widget(form.isAdmin) }}
+                <select class="form-control" name="userStatus" id="userStatus">
+                    <option value="">tous</option>
+                    <option value="1">Actif</option>
+                    <option value="0">Inactif</option>
+                </select>
+                {#{{ form_widget(form.isAdmin) }}#}
             </div>
         </div>
 
@@ -28,7 +34,9 @@
                 <label class="control-label" for="company_nom">Nom</label>
             </div>
             <div class="form-group col-md-3">
-                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+
+                <input class="form-control" type="text" id="userNom"  name="userNom">
+                {#{{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}#}
             </div>
             <div class="form-group col-md-2">
                 <label class="control-label" for="company_nom">Création du</label>
@@ -50,14 +58,22 @@
                 <label for="">Prenom</label>
             </div>
             <div class="form-group col-md-3">
-                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+
+                <input class="form-control" type="text" id="userPrenom"  name="userPrenom">
+                {#{{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}#}
             </div>
 
             <div class="form-group col-md-3">
                 <label class="control-label" for="company_nom">Entreprise</label>
             </div>
             <div class="form-group col-md-3">
-                {{ form_widget(form.companies) }}
+                <select class="form-control" name="userCompanies" id="userCompanies">
+                    <option value="" selected></option>
+                    {% for company in companies %}
+                    <option value="{{ company.id }}">{{ company.companyName }}</option>
+                    {% endfor %}
+                </select>
+                {#{{ form_widget(form.companies) }}#}
             </div>
 
         </div>
@@ -68,10 +84,11 @@
             </div>
         </div>
 
-        <div class="form-row" style="display: none">
-            <div class="btn-group col-md-3">
-                {{ form_widget(form.isValid) }}
-            </div>
-        </div>
-        {{ form_end(form) }}
+        {#<div class="form-row" style="display: none">#}
+            {#<div class="btn-group col-md-3">#}
+                {#{{ form_widget(form.isValid) }}#}
+            {#</div>#}
+        {#</div>#}
+        {#{{ form_end(form) }}#}
+    </form>
 </div>

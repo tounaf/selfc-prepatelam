@@ -10,22 +10,28 @@ namespace Telma\Selfcare\PrepaidBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function filterPagList($userLogin, $userNom, $userPrenom, $userStatus, $userType, $userCompanies, $userCreated1, $userCreated2)
+    public function filterPagList($userLogin, $userNom, $userPrenom, $userStatus, $userCompanies, $debutDateSearch, $endDateSearch)
     {
-        $dd = substr($userCreated1, 0, 2);
-        $md = substr($userCreated1, 3, 2);
-        $yd = substr($userCreated1, 6, 4);
+        $dd = substr($debutDateSearch, 0, 2);
+        $md = substr($debutDateSearch, 3, 2);
+        $yd = substr($debutDateSearch, 6, 4);
         $debutDate = $yd . "-" . $md . "-" . $dd;
         // formatter date end
-        $de = substr($userCreated2, 0, 2);
-        $me = substr($userCreated2, 3, 2);
-        $ye = substr($userCreated2, 6, 4);
+        $de = substr($endDateSearch, 0, 2);
+        $me = substr($endDateSearch, 3, 2);
+        $ye = substr($endDateSearch, 6, 4);
         $endDate = $ye . "-" . $me . "-" . $de;
 
         $queryBuilder = $this->createQueryBuilder('U');
         $queryBuilder->add('select', 'U');
         $queryBuilder->add('from', 'TelmaSelfcarePrepaidBundle:User U');
-        $queryBuilder->where(' 1=1 ');
+
+
+        if ($userCompanies != '') {
+            $queryBuilder->innerJoin(' U.companies','c');
+            $queryBuilder->where('c.id =:id');
+            $queryBuilder->setParameter('id', $userCompanies);
+        }
 
         if ($userLogin != '') {
             $queryBuilder->andWhere(' U.email LIKE :userLogin ');
@@ -39,32 +45,19 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             $queryBuilder->andWhere(' U.prenom LIKE :userPrenom ');
             $queryBuilder->setParameter('userPrenom', '%' . $userPrenom . '%');
         }
-//        if ($userPrenom != '') {
-//            $queryBuilder->andWhere(' U.companyName LIKE :companyName ');
-//            $queryBuilder->setParameter('companyName', '%' . $userPrenom . '%');
-//        }
-
         if ($userStatus != '') {
             $queryBuilder->andWhere(' U.isValid = :isValid ');
             $queryBuilder->setParameter('isValid', $userStatus);
         }
-        if ($userType != '') {
-            $queryBuilder->andWhere(' U.isAdmin = :isAdmin ');
-            $queryBuilder->setParameter('isAdmin', $userType);
-        }
-        if ($userCompanies != '') {
-            $queryBuilder->andWhere(' U.companies = :companies ');
-            $queryBuilder->setParameter('companies', $userCompanies);
-        }
-
         if ($debutDate != '' && $endDate != '') {
             $queryBuilder->andWhere(' ( U.createdAt BETWEEN :debutDate AND :endDate ) ');
             $queryBuilder->setParameter('debutDate', $debutDate);
             $queryBuilder->setParameter('endDate', $endDate);
         }
-
+        var_dump($queryBuilder->getParameter('isValid'));
         $query = $queryBuilder->getQuery();
         $result = $query->getResult();
         return $result;
     }
+
 }

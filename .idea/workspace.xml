@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9d5f3c-3cfe-4398-95f5-ccfa5719781f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit_content.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Util/Util.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Resetting/request_content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Resetting/request_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/CompanyController.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/CompanyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/SubscriptionCompanyController.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/SubscriptionCompanyController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Entity/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/company.yml" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/company.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/index.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/nav_menu.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/nav_menu.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/new.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/table_liste_company.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/table_liste_company.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_filter.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_filter.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_new.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/index.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/table_list.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/table_list.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/UserSearchType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig" afterPath="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,36 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig">
+      <file leaf-file-name="SubscriptionCompanyController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/SubscriptionCompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="47" selection-end-column="22" />
-              <folding>
-                <marker date="1548747222476" expanded="false" signature="1205:1219" ph="..." />
-                <marker date="1548747222476" expanded="false" signature="1281:1296" ph="..." />
-                <marker date="1548747222476" expanded="false" signature="1382:1427" ph="..." />
-                <marker date="1548747222476" expanded="false" signature="1464:1471" ph="×" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="49" selection-end-column="20" />
+            <state relative-caret-position="-340">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -80,72 +34,88 @@
       <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="544">
+              <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_content.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit_content.html.twig">
+      <file leaf-file-name="CompanyController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="178" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="178" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+            <state relative-caret-position="272">
+              <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Entity/User.php">
+      <file leaf-file-name="filter_result.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_result.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="290" column="40" lean-forward="false" selection-start-line="290" selection-start-column="40" selection-end-line="290" selection-end-column="40" />
+            <state relative-caret-position="-408">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form_search.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form_search.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="70" column="50" lean-forward="false" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-              <folding>
-                <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/UserType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="255">
+              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_content.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig">
+      <file leaf-file-name="filter_form.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="60" column="68" lean-forward="false" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form_filter.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_filter.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="117" lean-forward="false" selection-start-line="2" selection-start-column="99" selection-end-line="2" selection-end-column="117" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/CompanyRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form_new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -199,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/public/js/lib/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/public/js/lib/bootstrap.js" />
         <option value="$PROJECT_DIR$/web/bundles/telmaselfcareprepaid/js/lib/bootstrap.js" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/CompanyRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/telmaselfcareprepaid/js/lib/jquery.js" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
@@ -230,21 +199,22 @@
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Util/Util.php" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/list.html.twig" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/table_liste_company.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/UserSearchType.php" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/edit_content.html.twig" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/CompanyRepository.php" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig" />
+        <option value="$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php" />
       </list>
     </option>
   </component>
@@ -506,6 +476,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="User" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="telma-selfcare-entreprise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="telma-selfcare-entreprise" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Telma" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selfcare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrepaidBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SubscriptionCompany" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1065,12 +1073,12 @@
       <workItem from="1548393710763" duration="18737000" />
       <workItem from="1548416173275" duration="15254000" />
       <workItem from="1548653465497" duration="29663000" />
-      <workItem from="1548738654561" duration="8576000" />
+      <workItem from="1548738654561" duration="23978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239928000" />
+    <option name="totallyTimeSpent" value="255330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1133,7 +1141,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/edit0.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/pagination.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/show.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/edit.html.twig">
@@ -1237,13 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_result.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Form/SubscriptionCompanyType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1283,42 +1283,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="71" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_filter.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="95" lean-forward="false" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/resetPassword.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/CompanyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="e#59#109#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/SubscriptionCompanyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,26 +1298,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/CompanyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="40" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Entity/SubscriptionCompany.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="157" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1370,34 +1322,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/company.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="68" lean-forward="false" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="65" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1416,14 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="60" column="68" lean-forward="false" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1449,7 +1369,7 @@
         <state relative-caret-position="68">
           <caret line="4" column="178" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="178" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1462,18 +1382,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php">
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/user.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="30" />
+        <state relative-caret-position="51">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/company.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="408">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/config/routing/subscriptioncompany.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1481,23 +1409,106 @@
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="47" selection-end-column="22" />
+          <caret line="39" column="58" lean-forward="false" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/new_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
           <folding>
-            <marker date="1548747222476" expanded="false" signature="1205:1219" ph="..." />
-            <marker date="1548747222476" expanded="false" signature="1281:1296" ph="..." />
-            <marker date="1548747222476" expanded="false" signature="1382:1427" ph="..." />
-            <marker date="1548747222476" expanded="false" signature="1464:1471" ph="×" />
+            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/table_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/SubscriptionCompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_result.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/Company/filter_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_filter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="117" lean-forward="false" selection-start-line="2" selection-start-column="99" selection-end-line="2" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/SubscriptionCompany/form_new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/CompanyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Resources/views/User/form_search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="70" column="50" lean-forward="false" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Telma/Selfcare/PrepaidBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
